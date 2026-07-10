@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ALVO RH — Rede Social (Next.js)
 
 Plataforma profissional tipo LinkedIn para a **ALVO RH**, construída com **Next.js puro**:
@@ -47,3 +48,6 @@ src/
 - Substituir `lib/store.ts` por banco de dados (PostgreSQL + Prisma)
 - Adicionar autenticação (NextAuth.js)
 - Persistir dados entre reinicializações do servidor
+=======
+# RH-Solucao-em-gestao-de-pessoas
+>>>>>>> b7f70c8a65e305e5215a5aad8584080355b64dbb
