@@ -34,7 +34,7 @@ export function ProfileContent({
           {/* Avatar com status */}
           <div className="-mt-10 relative inline-block">
             <Avatar user={user} size="lg" />
-            {user.isOnline && (
+            {(
               <span
                 className="
                   absolute
