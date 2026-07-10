@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ALVO RH — Rede Social (Next.js)
 
-## Getting Started
+Plataforma profissional tipo LinkedIn para a **ALVO RH**, construída com **Next.js puro**:
 
-First, run the development server:
+- **Server Components** — renderização no servidor por padrão
+- **Server Actions** — mutações via formulários (`createPost`, `createJob`, `sendMessage`, etc.)
+- **App Router** — rotas nativas do Next.js
+- **Sem Context API** — estado gerenciado no servidor (`lib/store.ts`)
+
+## Funcionalidades
+
+| Rota | Descrição |
+|------|-----------|
+| `/` | Feed + vagas em destaque |
+| `/vagas` | Listagem e publicação de vagas |
+| `/contatos` | Diretório de contatos com WhatsApp, e-mail e telefone |
+| `/mensagens` | Lista de conversas |
+| `/mensagens/[id]` | Chat estilo WhatsApp |
+| `/perfil` | Perfil do usuário logado |
+
+## Executar
 
 ```bash
+cd alvo-rh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Arquitetura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/              # Rotas (Server Components)
+├── components/       # UI (majoritariamente Server Components)
+├── lib/
+│   ├── actions.ts    # Server Actions
+│   ├── seed.ts       # Dados iniciais
+│   ├── store.ts      # Store em memória (servidor)
+│   └── utils.ts      # Helpers e queries estáticas
+└── types/            # Tipos TypeScript
+```
 
-## Learn More
+## Próximos passos para produção
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Substituir `lib/store.ts` por banco de dados (PostgreSQL + Prisma)
+- Adicionar autenticação (NextAuth.js)
+- Persistir dados entre reinicializações do servidor
