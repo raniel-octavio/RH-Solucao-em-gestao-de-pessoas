@@ -21,13 +21,13 @@ export function Avatar({ user, size = "md" }: AvatarProps) {
   return (
     <div className="relative shrink-0">
       <div
-        className={`${sizes[size]} rounded-full bg-gradient-to-br from-alvo-bronze to-alvo-copper flex items-center justify-center font-semibold text-white`}
+        className={`${sizes[size]} rounded-full bg-gradient-to-br from-launch-gold to-launch-gold-dim flex items-center justify-center font-semibold text-white ring-2 ring-launch-gold/20`}
       >
         {user.avatar}
       </div>
       {user.online && (
         <span
-          className={`absolute bottom-0 right-0 ${dotSizes[size]} bg-green-500 border-2 border-white rounded-full`}
+          className={`absolute bottom-0 right-0 ${dotSizes[size]} bg-emerald-400 border-2 border-white rounded-full`}
         />
       )}
     </div>

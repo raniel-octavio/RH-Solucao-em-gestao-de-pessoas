@@ -11,7 +11,7 @@ export default async function PerfilUsuarioPage({ params }: Props) {
   const user = getUserById(id);
 
   if (!user) {
-    return <p className="text-center py-12 text-gray-500">Perfil não encontrado.</p>;
+    return <p className="text-center py-12 text-launch-muted">Perfil não encontrado.</p>;
   }
 
   return (

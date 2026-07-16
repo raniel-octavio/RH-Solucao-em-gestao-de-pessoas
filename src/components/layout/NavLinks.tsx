@@ -10,6 +10,8 @@ import {
   Users,
   MessageCircle,
   User,
+  Building2,
+  UserRound,
 } from "lucide-react";
 
 interface NavLinksProps {
@@ -17,41 +19,15 @@ interface NavLinksProps {
 }
 
 const navItems = [
-  {
-    href: "/",
-    label: "Início",
-    icon: Home,
-  },
-  {
-    href: "/vagas",
-    label: "Vagas",
-    icon: Briefcase,
-  },
-  {
-    href: "/matching",
-    label: "Matching",
-    icon: Target,
-  },
-  {
-    href: "/curriculo",
-    label: "Currículo",
-    icon: FileText,
-  },
-  {
-    href: "/contatos",
-    label: "Contatos",
-    icon: Users,
-  },
-  {
-    href: "/mensagens",
-    label: "Mensagens",
-    icon: MessageCircle,
-  },
-  {
-    href: "/perfil",
-    label: "Perfil",
-    icon: User,
-  },
+  { href: "/feed", label: "Feed", icon: Home },
+  { href: "/membro", label: "Membro", icon: UserRound },
+  { href: "/recrutador", label: "Recrutador", icon: Building2 },
+  { href: "/vagas", label: "Vagas", icon: Briefcase },
+  { href: "/matching", label: "Match", icon: Target },
+  { href: "/curriculo", label: "Currículo", icon: FileText },
+  { href: "/contatos", label: "Contatos", icon: Users },
+  { href: "/mensagens", label: "Mensagens", icon: MessageCircle },
+  { href: "/perfil", label: "Perfil", icon: User },
 ];
 
 export function NavLinks({ unread }: NavLinksProps) {
@@ -59,64 +35,31 @@ export function NavLinks({ unread }: NavLinksProps) {
 
   return (
     <>
-      {/* Desktop / Tablet */}
-      <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+      <nav className="hidden md:flex items-center gap-0.5 lg:gap-1">
         {navItems.map(({ href, label, icon: Icon }) => {
-          const isActive =
-            href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(href);
-
-          const showBadge =
-            href === "/mensagens" && unread > 0;
+          const isActive = pathname === href || pathname.startsWith(href + "/");
+          const showBadge = href === "/mensagens" && unread > 0;
 
           return (
             <Link
               key={href}
               href={href}
               className={`
-                relative
-                flex
-                items-center
-                gap-2
-                px-3 lg:px-4
-                py-2
-                rounded-xl
-                text-sm
-                font-medium
-                transition-all
+                relative flex items-center gap-1.5
+                px-2.5 lg:px-3 py-2 rounded-lg
+                text-[11px] lg:text-xs font-medium tracking-wide
+                transition-all duration-300
                 ${
                   isActive
-                    ? "bg-alvo-bronze/15 text-alvo-bronze"
-                    : "text-alvo-silver hover:text-white hover:bg-white/5"
+                    ? "bg-launch-gold/15 text-launch-gold"
+                    : "text-launch-muted hover:text-launch-white hover:bg-slate-100"
                 }
               `}
             >
-              <Icon className="w-4 h-4" />
-
-              <span className="hidden lg:block">
-                {label}
-              </span>
-
+              <Icon className="w-3.5 h-3.5" />
+              <span className="hidden xl:block">{label}</span>
               {showBadge && (
-                <span
-                  className="
-                    absolute
-                    -top-1
-                    -right-1
-                    min-w-[18px]
-                    h-[18px]
-                    px-1
-                    bg-red-500
-                    text-white
-                    text-[10px]
-                    font-bold
-                    rounded-full
-                    flex
-                    items-center
-                    justify-center
-                  "
-                >
+                <span className="absolute -top-1 -right-1 min-w-[16px] h-4 px-1 bg-launch-gold text-white text-[9px] font-bold rounded-full flex items-center justify-center">
                   {unread > 99 ? "99+" : unread}
                 </span>
               )}
@@ -125,113 +68,32 @@ export function NavLinks({ unread }: NavLinksProps) {
         })}
       </nav>
 
-      {/* Mobile */}
-      <nav
-        className="
-          md:hidden
-          flex
-          items-center
-          justify-between
-          w-full
-          py-2
-          overflow-x-auto
-          scrollbar-hide
-        "
-      >
+      <nav className="md:hidden flex items-center justify-between w-full py-2 overflow-x-auto">
         {navItems.map(({ href, label, icon: Icon }) => {
-          const isActive =
-            href === "/"
-              ? pathname === "/"
-              : pathname.startsWith(href);
-
-          const showBadge =
-            href === "/mensagens" && unread > 0;
+          const isActive = pathname === href || pathname.startsWith(href + "/");
+          const showBadge = href === "/mensagens" && unread > 0;
 
           return (
             <Link
               key={href}
               href={href}
-              className="
-                relative
-                flex
-                flex-col
-                items-center
-                justify-center
-                gap-1
-                min-w-[58px]
-                px-2
-                py-2
-                rounded-lg
-                transition-all
-              "
+              className="relative flex flex-col items-center justify-center gap-1 min-w-[52px] px-1.5 py-2"
             >
-              <div
-                className={`
-                  flex
-                  items-center
-                  justify-center
-                  transition-colors
-                  ${
-                    isActive
-                      ? "text-alvo-bronze"
-                      : "text-alvo-silver"
-                  }
-                `}
-              >
-                <Icon className="w-5 h-5" />
-              </div>
-
+              <Icon
+                className={`w-4.5 h-4.5 ${isActive ? "text-launch-gold" : "text-launch-muted"}`}
+              />
               <span
-                className={`
-                  text-[10px]
-                  font-medium
-                  leading-none
-                  ${
-                    isActive
-                      ? "text-alvo-bronze"
-                      : "text-alvo-silver"
-                  }
-                `}
+                className={`text-[9px] font-medium ${isActive ? "text-launch-gold" : "text-launch-muted"}`}
               >
                 {label}
               </span>
-
               {showBadge && (
-                <span
-                  className="
-                    absolute
-                    top-1
-                    right-2
-                    min-w-[16px]
-                    h-[16px]
-                    px-1
-                    bg-red-500
-                    text-white
-                    text-[9px]
-                    font-bold
-                    rounded-full
-                    flex
-                    items-center
-                    justify-center
-                  "
-                >
+                <span className="absolute top-1 right-1 min-w-[14px] h-3.5 px-0.5 bg-launch-gold text-white text-[8px] font-bold rounded-full flex items-center justify-center">
                   {unread > 99 ? "99+" : unread}
                 </span>
               )}
-
               {isActive && (
-                <span
-                  className="
-                    absolute
-                    bottom-0
-                    left-1/2
-                    -translate-x-1/2
-                    w-7
-                    h-0.5
-                    rounded-full
-                    bg-alvo-bronze
-                  "
-                />
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full bg-launch-gold" />
               )}
             </Link>
           );

@@ -1,6 +1,8 @@
 import { CreateJobForm, JobCard } from "@/components/jobs/JobCard";
 import { getJobs } from "@/lib/store";
 
+const RECRUITER_IMAGE = "/about.png";
+
 interface Props {
   searchParams: Promise<{ q?: string }>;
 }
@@ -10,18 +12,24 @@ export default async function VagasPage({ searchParams }: Props) {
   const jobs = getJobs(q);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-4 space-y-4">
-      <div className="bg-white from-alvo-navy to-alvo-navy-light rounded-xl p-6 text-white">
-        <h1 className="text-2xl font-bold text-alvo-navy">Alvos de Carreira</h1>
-        <p className="text-alvo-silver mt-1 text-sm">{jobs.length} vagas disponíveis</p>
-        <form method="GET" className="mt-4">
-          <input
-            name="q"
-            defaultValue={q}
-            placeholder="Buscar por cargo, empresa ou cidade..."
-            className="w-full px-4 py-2.5 rounded-lg bg-white border border-alvo-navy text-alvo-navy placeholder:text-alvo-navy focus:outline-none focus:ring-2 focus:ring-alvo-bronze/50 text-sm"
-          />
-        </form>
+    <div className="max-w-4xl mx-auto px-4 py-6 space-y-4">
+      <div className="relative overflow-hidden rounded-sm border border-launch-border bg-launch-surface p-6 sm:p-8 animate-fade-up" style={{ backgroundImage: `url(${RECRUITER_IMAGE})` }} >
+        <div className="absolute inset-0 hero-mesh opacity-40 pointer-events-none" />
+        <div className="relative">
+          <p className="text-[11px] tracking-[0.3em] uppercase text-launch-gold mb-2">Oportunidades</p>
+          <h1 className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide">
+            Vagas Launch
+          </h1>
+          <p className="text-launch-muted mt-1 text-sm">{jobs.length} vagas disponíveis</p>
+          <form method="GET" className="mt-5">
+            <input
+              name="q"
+              defaultValue={q}
+              placeholder="Buscar por cargo, empresa ou cidade..."
+              className="w-full px-4 py-3 rounded-lg bg-launch-elevated border border-launch-border text-launch-white placeholder:text-launch-muted/60 focus:outline-none focus:ring-2 focus:ring-launch-gold/40 text-sm"
+            />
+          </form>
+        </div>
       </div>
 
       <CreateJobForm />
@@ -31,7 +39,7 @@ export default async function VagasPage({ searchParams }: Props) {
       ))}
 
       {jobs.length === 0 && (
-        <p className="text-center py-12 text-gray-500">Nenhuma vaga encontrada.</p>
+        <p className="text-center py-12 text-launch-muted">Nenhuma vaga encontrada.</p>
       )}
     </div>
   );

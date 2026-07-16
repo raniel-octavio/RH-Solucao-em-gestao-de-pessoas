@@ -8,7 +8,7 @@ export const currentUser: User = {
   headline: "Gerente de RH | Especialista em Gestão de Pessoas",
   avatar: "AP",
   role: "recrutador",
-  company: "ALVO RH",
+  company: "Launch RH",
   location: "São Paulo, SP",
   connections: 847,
   about: "Profissional de RH com mais de 10 anos de experiência em recrutamento, desenvolvimento organizacional e gestão de talentos.",
@@ -39,7 +39,7 @@ export const currentUser: User = {
     "Criação de programa de liderança"
   ],
   online: true,
-  email: "ana.mendes@alvorh.com.br",
+  email: "ana.mendes@launchrh.com.br",
   phone: "(11) 98765-4321",
   whatsapp: "11987654321",
 };
@@ -233,7 +233,7 @@ export const seedJobs: Job[] = [
   {
     id: "job-1",
     title: "Analista de Recrutamento e Seleção",
-    company: "ALVO RH",
+    company: "Launch RH",
     location: "São Paulo, SP",
     type: "CLT",
     modality: "Híbrido",
@@ -420,7 +420,7 @@ export const seedPosts: Post[] = [
     id: "post-1",
     authorId: "user-5",
     content:
-      "🎯 Estamos expandindo nossa equipe! A ALVO RH busca profissionais apaixonados por gestão de pessoas. Confira as vagas abertas!",
+      "🎯 Estamos expandindo nossa equipe! A Launch busca profissionais apaixonados por gestão de pessoas. Confira as vagas abertas!",
     likes: 142,
     comments: 28,
     shares: 15,
@@ -431,7 +431,7 @@ export const seedPosts: Post[] = [
     id: "post-2",
     authorId: "user-1",
     content:
-      "💡 Dica do dia: A retenção de talentos começa no processo seletivo.\n\n#GestãoDePessoas #RH #ALVORH",
+      "💡 Dica do dia: A retenção de talentos começa no processo seletivo.\n\n#GestãoDePessoas #RH #LaunchRH",
     likes: 89,
     comments: 12,
     shares: 34,
@@ -452,7 +452,7 @@ export const seedPosts: Post[] = [
   {
     id: "post-4",
     authorId: "user-1",
-    content: "🎉 Parabéns à equipe ALVO RH pelo excelente resultado no projeto TechCorp!",
+    content: "🎉 Parabéns à equipe Launch RH pelo excelente resultado no projeto TechCorp!",
     likes: 178,
     comments: 45,
     shares: 22,

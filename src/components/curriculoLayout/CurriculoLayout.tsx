@@ -57,12 +57,12 @@ export function CurriculoLayout({ user }: { user: any }) {
     <main className="max-w-6xl mx-auto p-6">
       <div
         id="curriculo"
-        className="bg-white rounded-xl shadow-sm border overflow-hidden"
+        className="bg-launch-surface rounded-sm border border-launch-border overflow-hidden"
       >
         {/* Cabeçalho */}
-        <div className="bg-gradient-to-r from-alvo-navy to-alvo-navy-light p-8 text-white flex justify-between items-center">
+        <div className="bg-gradient-to-r from-launch-ink to-launch-elevated p-8 text-white flex justify-between items-center">
           <div className="flex items-center gap-5">
-            <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center text-3xl font-bold">
+            <div className="w-24 h-24 rounded-full bg-launch-surface/20 flex items-center justify-center text-3xl font-bold">
               {formData.avatar}
             </div>
 
@@ -74,7 +74,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                     onChange={(e) =>
                       updateField("name", e.target.value)
                     }
-                    className="bg-white text-black px-3 py-2 rounded w-full text-2xl font-bold"
+                    className="bg-launch-elevated text-launch-white border border-launch-border px-3 py-2 rounded w-full text-2xl font-bold"
                   />
 
                   <input
@@ -82,7 +82,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                     onChange={(e) =>
                       updateField("headline", e.target.value)
                     }
-                    className="bg-white text-black px-3 py-2 rounded w-full"
+                    className="bg-launch-elevated text-launch-white border border-launch-border px-3 py-2 rounded w-full"
                   />
 
                   <input
@@ -90,7 +90,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                     onChange={(e) =>
                       updateField("location", e.target.value)
                     }
-                    className="bg-white text-black px-3 py-2 rounded w-full"
+                    className="bg-launch-elevated text-launch-white border border-launch-border px-3 py-2 rounded w-full"
                   />
                 </>
               ) : (
@@ -98,10 +98,10 @@ export function CurriculoLayout({ user }: { user: any }) {
                   <h1 className="text-4xl font-bold">
                     {formData.name}
                   </h1>
-                  <p className="text-xl text-alvo-silver mt-1">
+                  <p className="text-xl text-launch-muted mt-1">
                     {formData.headline}
                   </p>
-                  <p className="mt-2 text-sm text-alvo-silver">
+                  <p className="mt-2 text-sm text-launch-muted">
                     {formData.location}
                   </p>
                 </>
@@ -114,8 +114,8 @@ export function CurriculoLayout({ user }: { user: any }) {
               onClick={handleEdit}
               className={`px-5 py-2 relative left-4 rounded-lg font-medium transition ${
                 isEditing
-                  ? "bg-gray-500 hover:bg-green-700 text-white"
-                  : "bg-alvo-bronze hover:bg-alvo-copper text-white"
+                  ? "bg-emerald-600 hover:bg-emerald-500 text-white"
+                  : "bg-launch-gold hover:bg-launch-gold-bright text-white"
               }`}
             >
               {isEditing ? "Salvar" : "Editar"}
@@ -127,7 +127,7 @@ export function CurriculoLayout({ user }: { user: any }) {
         <div className="p-8 space-y-8">
           {/* Resumo */}
           <section>
-            <h2 className="text-2xl font-bold text-alvo-navy mb-4">
+            <h2 className="text-2xl font-bold text-launch-white mb-4">
               Resumo Profissional
             </h2>
 
@@ -138,10 +138,10 @@ export function CurriculoLayout({ user }: { user: any }) {
                   updateField("about", e.target.value)
                 }
                 rows={5}
-                className="w-full border rounded-lg p-3"
+                className="w-full border border-launch-border rounded-lg p-3 bg-launch-elevated text-launch-white"
               />
             ) : (
-              <p className="text-gray-700 whitespace-pre-line">
+              <p className="text-launch-soft whitespace-pre-line">
                 {formData.about}
               </p>
             )}
@@ -149,7 +149,7 @@ export function CurriculoLayout({ user }: { user: any }) {
 
           {/* Objetivo */}
           <section>
-            <h2 className="text-2xl font-bold text-alvo-navy mb-4">
+            <h2 className="text-2xl font-bold text-launch-white mb-4">
               Objetivo Profissional
             </h2>
 
@@ -189,7 +189,7 @@ export function CurriculoLayout({ user }: { user: any }) {
 
           {/* Dados pessoais */}
           <section>
-            <h2 className="text-2xl font-bold text-alvo-navy mb-4">
+            <h2 className="text-2xl font-bold text-launch-white mb-4">
               Dados Pessoais
             </h2>
 
@@ -242,7 +242,7 @@ export function CurriculoLayout({ user }: { user: any }) {
 
           {/* Formação */}
           <section>
-            <h2 className="text-2xl font-bold text-alvo-navy mb-4">
+            <h2 className="text-2xl font-bold text-launch-white mb-4">
               Formação Acadêmica
             </h2>
 
@@ -253,7 +253,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                   updateField("education", e.target.value)
                 }
                 rows={4}
-                className="w-full border rounded-lg p-3"
+                className="w-full border border-launch-border rounded-lg p-3 bg-launch-elevated text-launch-white"
               />
             ) : (
               <p>{formData.education}</p>
@@ -262,7 +262,7 @@ export function CurriculoLayout({ user }: { user: any }) {
 
           {/* Experiência */}
           <section>
-            <h2 className="text-2xl font-bold text-alvo-navy mb-4">
+            <h2 className="text-2xl font-bold text-launch-white mb-4">
               Experiência Profissional
             </h2>
 
@@ -273,7 +273,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                   updateField("experience", e.target.value)
                 }
                 rows={8}
-                className="w-full border rounded-lg p-3"
+                className="w-full border border-launch-border rounded-lg p-3 bg-launch-elevated text-launch-white"
               />
             ) : (
               <p className="whitespace-pre-line">
@@ -291,7 +291,7 @@ export function CurriculoLayout({ user }: { user: any }) {
             ["achievements", "Conquistas"],
           ].map(([field, title]) => (
             <section key={field}>
-              <h2 className="text-2xl font-bold text-alvo-navy mb-4">
+              <h2 className="text-2xl font-bold text-launch-white mb-4">
                 {title}
               </h2>
 
@@ -302,7 +302,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                     updateArrayField(field, e.target.value)
                   }
                   rows={3}
-                  className="w-full border rounded-lg p-3"
+                  className="w-full border border-launch-border rounded-lg p-3 bg-launch-elevated text-launch-white"
                   placeholder="Separe os itens por vírgula"
                 />
               ) : field === "skills" ? (
@@ -310,7 +310,7 @@ export function CurriculoLayout({ user }: { user: any }) {
                   {formData.skills?.map((item: string) => (
                     <span
                       key={item}
-                      className="px-3 py-1 rounded-full bg-alvo-bronze/10 text-alvo-copper text-sm font-medium"
+                      className="px-3 py-1 rounded-full bg-launch-gold/10 text-launch-gold-bright text-sm font-medium"
                     >
                       {item}
                     </span>
