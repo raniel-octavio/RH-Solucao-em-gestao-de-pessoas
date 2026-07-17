@@ -60,7 +60,7 @@ export function CurriculoLayout({ user }: { user: any }) {
         className="bg-launch-surface rounded-sm border border-launch-border overflow-hidden"
       >
         {/* Cabeçalho */}
-        <div className="bg-gradient-to-r from-launch-ink to-launch-elevated p-8 text-white flex justify-between items-center">
+        <div className="bg-gradient-to-r from-launch-gold to-launch-ink p-8 text-white flex justify-between items-center">
           <div className="flex items-center gap-5">
             <div className="w-24 h-24 rounded-full bg-launch-surface/20 flex items-center justify-center text-3xl font-bold">
               {formData.avatar}

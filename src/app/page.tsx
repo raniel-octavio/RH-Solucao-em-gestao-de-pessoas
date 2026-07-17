@@ -52,9 +52,6 @@ export default function LandingPage() {
         <header className="relative z-20 flex items-center justify-between px-5 sm:px-8 lg:px-14 py-6 animate-fade-in">
           <Logo size="md" tone="light" />
           <nav className="hidden md:flex items-center gap-8 text-[11px] tracking-[0.22em] uppercase text-white/85">
-            <a href="#inicio" className="hover:text-white transition-colors">
-              Início
-            </a>
             <a href="#sobre" className="hover:text-white transition-colors">
               Sobre
             </a>
@@ -88,7 +85,7 @@ export default function LandingPage() {
         {/* Centered hero — bold caps like reference */}
         <div
           id="inicio"
-          className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pb-28"
+          className="relative z-10 flex-1 mt-8 flex flex-col items-center justify-center text-center px-6 pb-28"
         >
           <p className="animate-fade-up text-[11px] tracking-[0.45em] uppercase text-sky-200/90 mb-5">
             Plataforma de talentos
@@ -121,11 +118,25 @@ export default function LandingPage() {
       </section>
 
       {/* ── ABOUT — contraste sofisticado + imagem com vida ── */}
-      <section id="sobre" className="relative py-24 lg:py-28 px-6 sm:px-10 lg:px-16 bg-[#f7f9fc]">
-        <p className="text-center text-[11px] tracking-[0.35em] uppercase text-launch-gold mb-14">
-          Sobre Launch
-        </p>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 items-center">
+      <section
+        id="sobre"
+        className="relative py-20 lg:py-7 px-6 sm:px-10 lg:px-16 bg-[#f7f9fc] scroll-mt-0"
+      >
+        {/* Cabeçalho centralizado */}
+        <div className="flex flex-col items-center">
+          <a
+            href="#"
+            className="hover:text-launch-gold lg:py-5 transition-colors mb-2 text-[14px] font-medium"
+          >
+            Início
+          </a>
+          <p className="text-center text-[11px] tracking-[0.35em] uppercase text-launch-gold mb-10">
+            Sobre Launch
+          </p>
+        </div>
+
+        {/* Grid principal */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10 items-start">
           <div>
             <h3 className="font-display text-2xl sm:text-3xl font-bold uppercase leading-tight mb-5 text-slate-900">
               Tecnologia e sofisticação para impulsionar carreiras
@@ -164,60 +175,69 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Portals with rich navy band */}
-        <div className="max-w-7xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Portais com faixas */}
+        <div className="max-w-7xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
           <Link
             href="/membro"
             className="group relative overflow-hidden rounded-sm p-8 min-h-[200px] flex flex-col justify-end text-white"
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{
-                backgroundImage: `url(${MEMBERSHIP_IMAGE})`
-              }}
+              style={{ backgroundImage: `url(${MEMBERSHIP_IMAGE})` }}
             />
             <div className="absolute inset-0 bg-[#122033]/70 group-hover:bg-[#122033]/60 transition-colors" />
             <div className="relative z-10">
               <UserRound className="w-7 h-7 text-sky-300 mb-3" />
-              <h4 className="font-display text-xl uppercase tracking-wide mb-2">Área do Membro</h4>
+              <h4 className="font-display text-xl uppercase tracking-wide mb-2">
+                Área do Membro
+              </h4>
               <p className="text-sm text-white/70 mb-4 max-w-sm">
                 Feed, currículo, candidaturas, contatos e mensagens.
               </p>
               <span className="inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase text-sky-200">
-                Entrar <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                Entrar{" "}
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </span>
             </div>
           </Link>
+
           <Link
             href="/recrutador"
             className="group relative overflow-hidden rounded-sm p-8 min-h-[200px] flex flex-col justify-end text-white"
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{
-                backgroundImage: `url(${RECRUITER_IMAGE})`
-              }}
+              style={{ backgroundImage: `url(${RECRUITER_IMAGE})` }}
             />
             <div className="absolute inset-0 bg-[#122033]/70 group-hover:bg-[#122033]/60 transition-colors" />
             <div className="relative z-10">
               <Building2 className="w-7 h-7 text-sky-300 mb-3" />
-              <h4 className="font-display text-xl uppercase tracking-wide mb-2">Área do Recrutador</h4>
+              <h4 className="font-display text-xl uppercase tracking-wide mb-2">
+                Área do Recrutador
+              </h4>
               <p className="text-sm text-white/70 mb-4 max-w-sm">
                 Publique vagas, rode matching e fale com talentos.
               </p>
               <span className="inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase text-sky-200">
-                Entrar <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                Entrar{" "}
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </span>
             </div>
           </Link>
         </div>
       </section>
 
+
       {/* ── JOBS ── */}
-      <section id="vagas" className="py-24 lg:py-28 px-4 sm:px-8 section-rich">
+      <section id="vagas" className="py-24 lg:py-5 px-4 sm:px-8 section-rich">
+        <div className="flex flex-col items-center">
+        <a href="#" className="hover:text-launch-white relative top-7 transition-colors text-[11px] tracking-[0.35em] uppercase text-sky-200 mb-14">
+          Início
+        </a>
         <p className="text-center text-[11px] tracking-[0.35em] uppercase text-sky-300 mb-14">
           Vagas em destaque
         </p>
+        </div>
         <div className="max-w-7xl mx-auto flex items-stretch gap-3 sm:gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
           {jobs.map((job, i) => (
             <Link
@@ -256,23 +276,13 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="border-t border-launch-border bg-white py-10 px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <footer className="border-t border-launch-border bg-white py-10 px-6 flex items-center justify-between">
         <Logo size="sm" />
-        <p className="text-[11px] tracking-[0.2em] uppercase text-launch-muted">
+        <p className="absolute left-1/2 transform -translate-x-1/2 text-[11px] tracking-[0.2em] uppercase text-launch-muted">
           © {new Date().getFullYear()} Launch · Impulsionando carreiras
         </p>
-        <div className="flex gap-4 text-[11px] tracking-[0.15em] uppercase text-launch-muted">
-          <Link href="/feed" className="hover:text-launch-gold transition-colors">
-            Feed
-          </Link>
-          <Link href="/matching" className="hover:text-launch-gold transition-colors">
-            Match
-          </Link>
-          <Link href="/mensagens" className="hover:text-launch-gold transition-colors">
-            Mensagens
-          </Link>
-        </div>
       </footer>
+
     </div>
   );
 }

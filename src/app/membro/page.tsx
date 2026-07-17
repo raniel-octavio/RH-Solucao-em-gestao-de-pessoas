@@ -36,13 +36,13 @@ export default function MembroPage() {
         <div className="relative flex flex-col sm:flex-row sm:items-center gap-6" >
           <Avatar user={currentUser} size="lg" />
           <div className="flex-1 min-w-0">
-            <p className="text-[11px] tracking-[0.3em] uppercase text-launch-gold mb-2">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-white mb-2">
               Área do membro
             </p>
-            <h1 className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide truncate">
+            <h1 className="font-display text-3xl sm:text-4xl font-bold text-white uppercase tracking-wide truncate">
               Olá, {currentUser.name.split(" ")[0]}
             </h1>
-            <p className="text-sm text-launch-muted mt-1">{currentUser.headline}</p>
+            <p className="text-sm text-[17px] text-white text-launch-muted mt-1">{currentUser.headline}</p>
           </div>
           <Link
             href="/perfil"

@@ -8,7 +8,7 @@ export const currentUser: User = {
   headline: "Gerente de RH | Especialista em Gestão de Pessoas",
   avatar: "AP",
   role: "recrutador",
-  company: "Launch RH",
+  company: "Launch",
   location: "São Paulo, SP",
   connections: 847,
   about: "Profissional de RH com mais de 10 anos de experiência em recrutamento, desenvolvimento organizacional e gestão de talentos.",
@@ -233,7 +233,7 @@ export const seedJobs: Job[] = [
   {
     id: "job-1",
     title: "Analista de Recrutamento e Seleção",
-    company: "Launch RH",
+    company: "Launch",
     location: "São Paulo, SP",
     type: "CLT",
     modality: "Híbrido",

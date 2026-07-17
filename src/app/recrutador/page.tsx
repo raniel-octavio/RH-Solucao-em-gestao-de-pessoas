@@ -29,35 +29,35 @@ export default function RecrutadorPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 space-y-10">
-      <section className="relative overflow-hidden rounded-sm border border-launch-border bg-launch-surface p-6 sm:p-10 animate-fade-up"style={{ backgroundImage: `url(${RECRUITER_IMAGE})` }}>
+       <section className="relative overflow-hidden rounded-sm border border-launch-border bg-launch-surface p-6 sm:p-10 animate-fade-up bg-cover bg-center" style={{ backgroundImage: `url(${RECRUITER_IMAGE})` }}>
         <div className="absolute inset-0 hero-mesh opacity-50 pointer-events-none" />
         <div className="relative flex flex-col lg:flex-row lg:items-center gap-6 justify-between">
           <div className="flex items-center gap-5">
             <Avatar user={currentUser} size="lg" />
             <div>
-              <p className="text-[11px] tracking-[0.3em] uppercase text-launch-gold mb-2">
+              <p className="text-[13px] tracking-[0.3em] text-white uppercase text-launch-gold mb-2">
                 Portal do recrutador
               </p>
-              <h1 className="font-display text-2xl sm:text-3xl font-bold uppercase tracking-wide">
-                {currentUser.company || "Launch RH"}
+              <h1 className="font-display text-2xl text-white sm:text-4xl font-bold uppercase tracking-wide">
+                {currentUser.company || "Launch"}
               </h1>
-              <p className="text-sm text-launch-muted mt-1">{currentUser.name}</p>
+              <p className="text-sm text-white text-[17px] text-launch-muted mt-1">{currentUser.name}</p>
             </div>
           </div>
           <div className="flex gap-6 sm:gap-10">
             <div>
-              <p className="font-display text-3xl font-bold text-launch-gold">{jobs.length}</p>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-launch-muted mt-1">Vagas ativas</p>
+              <p className="font-display text-3xl font-bold text-white text-launch-gold">{jobs.length}</p>
+              <p className="text-[13px] tracking-[0.4em] uppercase text-white text-launch-muted mt-1">Vagas ativas</p>
             </div>
             <div>
-              <p className="font-display text-3xl font-bold text-launch-gold">{candidates}</p>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-launch-muted mt-1">Candidatos</p>
+              <p className="font-display text-3xl text-white font-bold text-launch-gold">{candidates}</p>
+              <p className="text-[13px] tracking-[0.4em] uppercase text-white text-launch-muted mt-1">Candidatos</p>
             </div>
             <div>
-              <p className="font-display text-3xl font-bold text-launch-gold">
+              <p className="font-display text-3xl text-white font-bold text-launch-gold">
                 {getJobs().reduce((acc, j) => acc + j.applicants, 0)}
               </p>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-launch-muted mt-1">Candidaturas</p>
+              <p className="text-[13px] tracking-[0.4em] text-white uppercase text-launch-muted mt-1">Candidaturas</p>
             </div>
           </div>
         </div>

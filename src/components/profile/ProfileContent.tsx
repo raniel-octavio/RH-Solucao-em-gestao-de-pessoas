@@ -3,7 +3,7 @@ import { MapPin, Users, MessageCircle, Briefcase, Award } from "lucide-react";
 import { Avatar } from "@/components/ui/Avatar";
 import { openConversation } from "@/lib/actions";
 import type { User } from "@/types";
-
+const MEMBERSHIP_IMAGE = "/job4.png";
 const roleLabels: Record<User["role"], string> = {
   candidato: "Candidato",
   recrutador: "Recrutador",
@@ -18,12 +18,12 @@ export function ProfileContent({
   isOwnProfile?: boolean;
 }) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-2">
       <div className="card-glass rounded-sm overflow-hidden">
-        <div className="h-24 bg-gradient-to-r from-launch-ink via-launch-elevated to-launch-ink relative">
+        <div className="h-24 bg-white relative" style={{ backgroundImage: `url(${MEMBERSHIP_IMAGE})`}}>
           <div className="absolute inset-0 hero-mesh opacity-50" />
         </div>
-        <div className="px-4 sm:px-6 pb-6">
+        <div className="px-4 sm:px-6 pb-3">
           <div className="-mt-10 relative inline-block">
             <Avatar user={user} size="lg" />
           </div>

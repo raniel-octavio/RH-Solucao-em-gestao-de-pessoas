@@ -6,6 +6,7 @@ import { Avatar } from "@/components/ui/Avatar";
 import { openConversation } from "@/lib/actions";
 import { getContactsFiltered } from "@/lib/utils";
 import type { User, UserRole } from "@/types";
+const RECRUITER_IMAGE = "/job4.png";
 
 const roleFilters: { value: UserRole | "todos"; label: string }[] = [
   { value: "todos", label: "Todos" },
@@ -149,15 +150,15 @@ export function ContactsList({ search, role = "todos" }: ContactsListProps) {
 
 export function ContactsHeader() {
   return (
-    <div className="relative overflow-hidden rounded-sm border border-launch-border bg-launch-surface p-4 sm:p-6 mb-6 animate-fade-up">
-      <div className="absolute inset-0 hero-mesh opacity-40 pointer-events-none" />
+   <div className="relative overflow-hidden rounded-sm border border-launch-border bg-blue-900/20 p-4 sm:p-6 mb-6 animate-fade-up" style={{ backgroundImage: `url(${RECRUITER_IMAGE})` }}>
+     <div className="absolute inset-0 hero-mesh opacity-40 pointer-events-none" />
       <div className="relative flex items-center gap-3">
         <div className="w-10 h-10 rounded-xl bg-launch-gold/15 flex items-center justify-center shrink-0">
-          <Users className="w-5 h-5 text-launch-gold" />
+          <Users className="w-5 h-5 text-white" />
         </div>
         <div>
-          <h1 className="font-display text-xl sm:text-2xl font-bold uppercase tracking-wide">Contatos</h1>
-          <p className="text-launch-muted text-xs sm:text-sm">
+          <h1 className="font-display text-xl sm:text-3xl font-bold  text-white uppercase tracking-wide">Contatos</h1>
+          <p className="text-launch-muted text-white text-[10px] sm:text-[20px]">
             Sua rede de candidatos, recrutadores e empresas
           </p>
         </div>

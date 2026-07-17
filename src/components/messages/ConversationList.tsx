@@ -23,11 +23,11 @@ export function ConversationList({ activeId }: { activeId?: string }) {
 
   return (
     <div className="w-full md:w-[380px] lg:w-[420px] xl:w-[450px] bg-launch-surface border-r border-launch-border flex flex-col min-h-0">
-      <div className="bg-launch-ink p-4 sm:p-5 shrink-0 border-b border-launch-border">
+      <div className="bg-gradient-to-r from-launch-gold to-launch-ink p-4 sm:p-5 shrink-0 border-b border-launch-border">
         <h2 className="font-display text-white font-semibold text-lg sm:text-xl uppercase tracking-wide">
           Mensagens
         </h2>
-        <p className="text-launch-muted text-xs sm:text-sm mt-1">Canal Launch RH</p>
+        <p className="text-launch-muted text-xs sm:text-sm mt-1">Canal Launch</p>
       </div>
 
       <div className="flex-1 overflow-y-auto">
